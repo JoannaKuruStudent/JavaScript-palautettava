@@ -1,0 +1,137 @@
+body {
+    background: lightgray; 
+    font-family: verdana; 
+    padding: 30px;
+}
+/* 
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+th {
+    background-color: lightgrey;
+
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.fixed_header{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.fixed_header tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 350px;
+} */
+
+/* h1 {
+    font-size: 48px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    color: white;
+    margin-left: 20px;
+    text-align: center;
+    background: skyblue;
+}
+h2 {
+    color: blue;
+    margin-left: 20px;
+}
+h3 {
+    color: #004080;
+    margin-left: 20px;
+   
+}
+p {
+    color: #002b80;
+    margin-left: 20px;
+    font-family: verdana;
+    font-size: 12px;
+    text-align: center;
+}
+
+
+table {
+    width:50%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th	{
+    background-color: black;
+    color: white;
+}
+
+
+
+
+
+.btnx {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #f7f705, #e85925);
+  background-image: -moz-linear-gradient(top, #f7f705, #e85925);
+  background-image: -ms-linear-gradient(top, #f7f705, #e85925);
+  background-image: -o-linear-gradient(top, #f7f705, #e85925);
+  background-image: linear-gradient(to bottom, #f7f705, #e85925);
+  -webkit-border-radius: 18;
+  -moz-border-radius: 18;
+  border-radius: 10px;
+  text-shadow: 5px 3px 6px #615b17;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 21px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btnx:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #e85925, #f7f705);
+  background-image: -moz-linear-gradient(top, #e85925, #f7f705);
+  background-image: -ms-linear-gradient(top, #e85925, #f7f705);
+  background-image: -o-linear-gradient(top, #e85925, #f7f705);
+  background-image: linear-gradient(to bottom, #e85925, #f7f705);
+  text-decoration: none;
+}
+
+
+iframe {
+    display: block;
+    width: 800px;
+    margin: 0 auto;
+    border: 0;
+}
+
+.buttoni {
+    background: gray;
+    border-radius: 8px;
+    font-family: Georgia;
+    color: orange;
+    font-size: 24px;
+    text-decoration: none;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .buttoni:hover {
+    background: #e9fc3c;
+    background-image: linear-gradient(to bottom, #0c0c0cf3, #c5c5c3);
+    text-decoration: none;
+  } */
