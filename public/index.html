@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Node-palvelin!</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Palvelimen valikko ---></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="#">Kotisivu</a>
+                    <a onclick="metodi()" class="nav-link" href="#">Toiminnot</a>
+                    <a class="nav-link" href="#">Hinnasto</a>
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ei käytössä</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-danger">Vasen</button>
+        <button type="button" class="btn btn-warning">Keski</button>
+        <button type="button" class="btn btn-success">Oikea</button>
+    </div>
+
+    <center></br>
+        <h1>Tämä on paikallinen Node-palvelin.</br>
+            <!-- Tähän kansioon kaikki palautettavan tehtävän buttonit, html, css ym. -->
+        </h1>
+        </br>
+        <button onclick="haeTuotteet()" class="btn btn-success">Hae tuotteet!</button>
+        </br></br>
+        <div id="htmlTaulukko">Ladataan tuotteita..</div>
+    </center>
+
+    <script>
+
+        function haeTuotteet() {
+
+            var tuoteTable = `<table style="width: 900px">
+                <thead>
+                    <tr>
+                        <th>Tuote</th>
+                        <th>Hinta</th>
+                    </tr>
+                </thead>
+                <tbody>`
+
+            fetch('http://localhost:3000/tuotteet/')
+                .then(response => response.json())
+                .then(tuotteet => tuotteet.map(t =>
+                    tuoteTable += `<tr>
+                    <td>${t.tuote}</td>
+                    <td>${t.hinta}</td>
+                </tr>`
+                ))
+
+            // for (i = 0; i < tuotteet.lenght; i++) {
+            //     tuoteTable +=  `<tr>
+            //         <td>$(t.tuote}</td>)
+            //         <td>$(t.hinta}</td>)
+            //     </tr>`
+            // }
+
+            setTimeout(() => {
+                tuoteTable += `</tbody></table>`
+                document.getElementById("htmlTaulukko").innerHTML = tuoteTable
+            }, 2000
+            )
+        }
+    </script>
+
+    <!-- <div id="tuoteTaulukko"></div> -->
+
+    <!-- <script>
+
+        //------------tuotteet-kovakoodatusta--jsonista----------------------------------
+
+        // var tuoteTaulukko = `<table>
+        //     <thead>
+        //         <tr>
+        //             <th>Tuotekoodi</th>
+        //             <th>Tuotetuote</th>
+        //             <th>Ostohinta</th>
+        //             <th>Myyntihinta</th>
+        //             <th>Nettisivut</th>
+        //         </tr>
+        //     </thead>
+        //     <tbody>`
+
+        // var Tuotteet = `[{
+        //     "id": 1, "tuote": "Pallo", "ostohinta": "5", "myyntihinta": "8", "link": https://jsonplaceholder.typicode.com/guide/
+        // }, {
+        //     "id": 2, "tuote": "Pulla","ostohinta": "1", "myyntihinta": "2", "link": https://www.w3schools.com/js/js_json_intro.asp
+        // },{
+        //     "id": 3, "tuote": "Pilli","ostohinta": "0,2", "myyntihinta": "0,4", "link": https://www.w3schools.com/js/js_json_syntax.asp
+        // }, {
+        //     "id": 4, "tuote": "Matto","ostohinta": "12", "myyntihinta": "25", "link": https://www.w3schools.com/js/js_json_datatypes.asp
+        // }, {
+        //     "id": 5, "tuote": "Mitta","ostohinta": "3", "myyntihinta": "5", "link": https://www.w3schools.com/js/js_date_methods.asp
+        // },{
+        //     "id": 6, "tuote": "Orava","ostohinta": "500", "myyntihinta": "1000", "link": https://jsonplaceholder.typicode.com/
+        // },{
+        //     "id": 7, "tuote": "En keksi","ostohinta": "32", "myyntihinta": "89", "link": https://www.w3schools.com/js/js_json_parse.asp
+        // }
+        // ]`
+        // var tuotteet = JSON.parse(Tuotteet)
+
+        // var vuosi = new Date().getFullYear()
+
+        // tuotteet.map(t =>
+        //     tuoteTaulukko += `<tr>
+        //     <td>${t.id}</td>
+        //     <td>${t.tuote}</td>
+        //     <td>${t.ostohinta}</td>
+        //     <td>${t.myyntihinta}</td>
+        //     <td>${t.link}</td>
+        // </tr>`
+        // )
+        // tuoteTaulukko += `</tbody></table>`
+
+        // document.getElementById("tuoteTaulukko").innerHTML = tuoteTaulukko
+
+        //-----------todos-oikealta-palvelimelta-http-pyyntönä   -----------------------
+
+    //     var todoTable = `<table style="width: 900px">
+    //         <thead>
+    //             <tr>
+    //                 <th>Thing to do in latin</th>
+    //                 <th>completed?</th>
+    //             </tr>
+    //         </thead>
+    //         <tbody>`
+
+    //     fetch('https://jsonplaceholder.typicode.com/todos?_limit=50/')
+    //         .then(response => response.json())
+    //         .then(json => json.map(t =>
+    //             todoTable += `<tr>
+    //             <td>${t.title}</td>
+    //             <td>${t.completed}</td>
+    //         </tr>`
+    //         ))
+    //     setTimeout(() => {
+    //         todoTable += `</tbody></table>`
+    //         document.getElementById("htmlTaulukko2").innerHTML = todoTable
+    //     }, 2000
+    //     )
+
+    // </script> -->
+</body>
+</html>
