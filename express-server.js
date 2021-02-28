@@ -3,7 +3,7 @@ const express = require('express')
 
 const app = express()
 
-const polku = path.join(__dirname, './webdir')
+const polku = path.join(__dirname, './public')
 
 app.use(express.static(polku))
 
@@ -15,6 +15,10 @@ const tuotteetJson = [{"id": 1, "tuote": "Pilli", "hinta": 1},
 app.get('/tuotteet', (req, res) => res.json(tuotteetJson))
 
 
+// - - - - - - - - - - - - - - - - -
+
+// yritin luoda raidallista taulukkoa, mut herjaa mm:
+//Uncaught ReferenceError: haeTuotteetTaulukkoon is not defined at HTMLButtonElement.onclick ((index):49)
 // var munObj, munJSON, i, j, k=0, x = "";
 
 // munJSON = '{"kaikkiTuotteet":[{"tuote":"Pilli","hinta":"1"},'+
@@ -36,10 +40,12 @@ app.get('/tuotteet', (req, res) => res.json(tuotteetJson))
 //     document.getElementById("tuotteetTaulukossa").innerHTML = x;     
 // };
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
-})
+// app.listen(3000, () => {
+//     console.log('Server is up on port 3000.')
+// })
 
+
+// - - - - - - - - - Muita koodivaihtoehtoja talteen
 
 
 //     var tuoteObj, tuoteJSON, i, j, k=0, x = "";
