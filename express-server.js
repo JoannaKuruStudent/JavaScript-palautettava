@@ -17,8 +17,7 @@ app.get('/tuotteet', (req, res) => res.json(tuotteetJson))
 
 // - - - - - - - - - - - - - - - - -
 
-// yritin luoda raidallista taulukkoa, mut herjaa mm:
-//Uncaught ReferenceError: haeTuotteetTaulukkoon is not defined at HTMLButtonElement.onclick ((index):49)
+
 // var munObj, munJSON, i, j, k=0, x = "";
 
 // munJSON = '{"kaikkiTuotteet":[{"tuote":"Pilli","hinta":"1"},'+

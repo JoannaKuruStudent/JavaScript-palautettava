@@ -42,12 +42,12 @@
     <center></br>
         <h1>Tämä on paikallinen Nodepalvelin.</h1>
         </br>
-        <button onclick="haeTuotteet()" class="btn btn-success">Hae tuotteet!</button>
+        <button onclick="haeTuotteet()" class="btn-lg btn-success">Hae tuotteet!</button>
         </br></br>
         <div id="htmlTaulukko"></div>
 
-        <!-- Tämä oli raidallista taulukkoa varten, herjaa mm: Uncaught ReferenceError: haeTuotteetTaulukkoon is not defined at HTMLButtonElement.onclick ((index):49)
-        <div id="tuotteetTaulukossa"></div>
+        <!-- Tämä oli toista taulukkoa varten, herjaa mm: Uncaught ReferenceError: haeTuotteetTaulukkoon is not defined at HTMLButtonElement.onclick ((index):49) -->
+        <!-- <div id="tuotteetTaulukossa"></div>
         <button type="button" onclick="haeTuotteetTaulukkoon()">Hae tuotteet taulukkoon!</button> -->
     </center>
 
@@ -57,7 +57,7 @@
 
         document.getElementById("htmlTaulukko").innerHTML = "<h3>Ladataan..</h3>"
 
-            var tuoteTable = `<table style="width: 100px">
+            var tuoteTable = `<table style="width: 140px">
                 <thead>
                     <tr>
                         <th>Tuote</th>

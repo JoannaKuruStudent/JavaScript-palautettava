@@ -1,7 +1,33 @@
 body {
-    /* background-color: lightgray;  */
     padding: 20px;
 }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 50%;
+    border: 1px solid #ddd;
+}
+      
+th {
+    background-color:silver;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+          
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+/* #htmlTaulukko {
+    border: 1px solid black;
+    margin-bottom: 15px;
+    width: 50%;
+  } */
+
 /* 
 th, td {
     text-align: left;
