@@ -3,7 +3,7 @@ const express = require('express')
 
 const app = express()
 
-const polku = path.join(__dirname, './public')
+const polku = path.join(__dirname, './webdir')
 
 app.use(express.static(polku))
 
@@ -14,9 +14,32 @@ const tuotteetJson = [{"id": 1, "tuote": "Pilli", "hinta": 1},
 
 app.get('/tuotteet', (req, res) => res.json(tuotteetJson))
 
+
+// var munObj, munJSON, i, j, k=0, x = "";
+
+// munJSON = '{"kaikkiTuotteet":[{"tuote":"Pilli","hinta":"1"},'+
+// '{"tuote":"Pulla","hinta":"2"},'+
+// '{"tuote":"Pallo","hinta":"8",'+
+// '{"tuote":"Polla","hinta":"10000000",';
+
+// munObj = JSON.parse(munJSON);
+
+// function haeTuotteetTaulukkoon() { 
+
+//     x = "<table><tr><th>Tuote</th><th>Hinta</th>";
+//     for (i in munObj.kaikkiTuotteet) { 
+//         x += "<tr><td>" + munObj.kaikkiTuotteet[i].tuote + "</td>";
+//         x += "<td>" + munObj.kaikkiTuotteet[i].hinta + "</td>";
+//     }
+//     x += "</table>";
+    
+//     document.getElementById("tuotteetTaulukossa").innerHTML = x;     
+// };
+
 app.listen(3000, () => {
     console.log('Server is up on port 3000.')
 })
+
 
 
 //     var tuoteObj, tuoteJSON, i, j, k=0, x = "";

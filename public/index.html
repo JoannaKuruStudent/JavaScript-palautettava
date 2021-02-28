@@ -5,52 +5,57 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="/tyyli.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <title>Node-palvelin!</title>
+    <title>Nodepalvelin!</title>
 </head>
+
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Palvelimen valikko ---></a>
+            <a class="navbar-brand" href="#">Nodepalvelin</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Kotisivu</a>
-                    <a onclick="metodi()" class="nav-link" href="#">Toiminnot</a>
-                    <a class="nav-link" href="#">Hinnasto</a>
+                    <a class="nav-link active" aria-current="page" href="#">Ei toimi</a>
+                    <a onclick="metodi()" class="nav-link" href="#">Älä klikkaa</a>
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ei käytössä</a>
                 </div>
             </div>
         </div>
     </nav>
     
-    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+    <!-- <div class="btn-group" role="group" aria-label="Basic mixed styles example">
         <button type="button" class="btn btn-danger">Vasen</button>
         <button type="button" class="btn btn-warning">Keski</button>
         <button type="button" class="btn btn-success">Oikea</button>
-    </div>
+    </div> -->
 
     <center></br>
-        <h1>Tämä on paikallinen Node-palvelin.</br>
-            <!-- Tähän kansioon kaikki palautettavan tehtävän buttonit, html, css ym. -->
-        </h1>
+        <h1>Tämä on paikallinen Nodepalvelin.</h1>
         </br>
         <button onclick="haeTuotteet()" class="btn btn-success">Hae tuotteet!</button>
         </br></br>
-        <div id="htmlTaulukko">Ladataan tuotteita..</div>
+        <div id="htmlTaulukko"></div>
+
+        <!-- <div id="tuotteetTaulukossa"></div>
+        <button type="button" onclick="haeTuotteetTaulukkoon()">Hae tuotteet taulukkoon!</button> -->
     </center>
 
     <script>
 
         function haeTuotteet() {
 
-            var tuoteTable = `<table style="width: 900px">
+        document.getElementById("htmlTaulukko").innerHTML = "<h3>Ladataan..</h3>"
+
+            var tuoteTable = `<table style="width: 100px">
                 <thead>
                     <tr>
                         <th>Tuote</th>
@@ -82,6 +87,12 @@
             )
         }
     </script>
+
+
+
+
+
+
 
     <!-- <div id="tuoteTaulukko"></div> -->
 
@@ -158,7 +169,6 @@
     //         document.getElementById("htmlTaulukko2").innerHTML = todoTable
     //     }, 2000
     //     )
-
     // </script> -->
 </body>
 </html>
